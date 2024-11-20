@@ -1,46 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
+
+    <!-- RecyclerView para mostrar las imágenes seleccionadas -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_above="@+id/btnBack" />
 
     <!-- Botón para seleccionar imagen -->
     <Button
         android:id="@+id/btnViewGallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/gallery_title" />
+        android:text="@string/gallery_title"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Botón para abrir la cámara -->
     <Button
         android:id="@+id/btnCamera"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/camera" />
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Volver"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center" />
-
+        android:text="@string/camera"
+        android:layout_below="@id/btnViewGallery"
+        android:layout_marginBottom="8dp" />
 
     <!-- Título de la galería -->
     <TextView
         android:id="@+id/tvGalleryTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="--"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_below="@id/btnCamera"
+        android:layout_marginBottom="8dp" />
 
-    <!-- RecyclerView para mostrar las imágenes seleccionadas -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scrollbars="vertical" />
+    <!-- Botón "Volver" fijo en la parte inferior -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp" />
 
-</LinearLayout>
+</RelativeLayout>
