@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">HerbariumApp</string>
+    <string name="app_name">Herbarium App</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="gallery_title">Gallery</string>
+    <string name="camera">Camera</string>
 </resources>
+
